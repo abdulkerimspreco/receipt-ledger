@@ -1,17 +1,28 @@
-import { Text, View, StyleSheet } from "react-native";
+import ExpenseCard from "@/components/ExpenseCard";
+import { expenses } from "@/data/expenses";
+import { Expense } from "@/types";
+import { ScrollView, StyleSheet, Text } from "react-native";
+
+export const ExpensesList = () => {
+  return (
+    <>
+      {expenses.map((expense: Expense) => (
+        <ExpenseCard key={expense.id} expense={expense} />
+      ))}
+    </>
+  );
+};
 
 export default function Index() {
   return (
-    <View style={styles.container}>
-      <Text>Edit src/app/index.tsx to edit this screen.</Text>
-    </View>
+    <ScrollView contentContainerStyle={styles.content}>
+      <Text style={styles.count}>{expenses.length} expenses</Text>
+      <ExpensesList />
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
+  content: { padding: 16, gap: 12 },
+  count: { fontSize: 14, color: "#55627A" },
 });
