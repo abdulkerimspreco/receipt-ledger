@@ -1,56 +1,33 @@
-# Welcome to your Expo app 👋
+# Receipt Ledger
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Receipt Ledger is a personal expense tracker where you photograph a receipt and the app pre-fills the expense form with the merchant, date and total for you to review and apply. Each user has their own account and can browse, edit and categorize their spending by month.
 
-## Get started
+## Run the Receipt Ledger app
 
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+npm install
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+The project uses Expo SDK 57. Expo Go on an iPhone only supports the newest SDK, so run it in the iOS Simulator (press `i`) or on Android (press `a`).
 
-### Other setup steps
+## Features
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+- [x] Expense type and mock data
+- [x] Expenses grid with receipt photos (mock data)
+- [x] Expense details component
+- [ ] Summary header with count and total
+- [ ] Expense details screen
+- [ ] Tabs: Expenses, Stats, Settings
+- [ ] Add and edit expenses with validation
+- [ ] Delete expenses
+- [ ] Filter by category and month
+- [ ] Shared state and saving data on the device
+- [ ] Camera and photo library for receipts
+- [ ] Sign up and log in, with each user's own data (Supabase)
+- [ ] Scan a receipt to pre-fill the form
+- [ ] Android build (APK) with app icon and splash screen
 
-## Learn more
+## Screenshots
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Coming soon.
