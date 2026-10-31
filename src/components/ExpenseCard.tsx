@@ -1,5 +1,6 @@
 import type { Expense } from "@/types";
-import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { Image } from "expo-image";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 type ExpenseCardProps = {
   expense: Expense;
@@ -11,7 +12,12 @@ export default function ExpenseCard({ expense }: ExpenseCardProps) {
       onPress={() => console.log("Open", expense.id)}
       style={({ pressed }) => [styles.card, pressed && styles.pressed]}
     >
-      <Image source={{ uri: expense.photoUrl }} style={styles.photo} />
+      <Image
+        contentFit="cover"
+        transition={200}
+        source={{ uri: expense.photoUrl }}
+        style={styles.photo}
+      />
       <View style={styles.body}>
         <Text style={styles.title}>{expense.merchant}</Text>
         <Text style={styles.details}>
