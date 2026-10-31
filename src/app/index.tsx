@@ -1,7 +1,8 @@
 import ExpenseCard from "@/components/ExpenseCard";
+import SummaryHeader from "@/components/SummaryHeader";
 import { expenses } from "@/data/expenses";
 import { Expense } from "@/types";
-import { ScrollView, StyleSheet, Text } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 
 export const ExpensesList = () => {
   return (
@@ -16,7 +17,7 @@ export const ExpensesList = () => {
 export default function Index() {
   return (
     <ScrollView contentContainerStyle={styles.content}>
-      <Text style={styles.count}>{expenses.length} expenses</Text>
+      <SummaryHeader expenses={expenses} />
       <ExpensesList />
     </ScrollView>
   );
