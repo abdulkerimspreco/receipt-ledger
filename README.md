@@ -16,7 +16,7 @@ The project uses Expo SDK 57. Expo Go on an iPhone only supports the newest SDK,
 - [x] Expense type and mock data
 - [x] Expenses grid with receipt photos (mock data)
 - [x] Expense details component
-- [ ] Summary header with count and total
+- [x] Summary header with count and total
 - [ ] Expense details screen
 - [ ] Tabs: Expenses, Stats, Settings
 - [ ] Add and edit expenses with validation
