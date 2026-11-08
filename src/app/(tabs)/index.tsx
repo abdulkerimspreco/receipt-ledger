@@ -1,9 +1,11 @@
+import CategoryChips, { type CategoryFilter } from "@/components/CategoryChips";
 import ExpenseCard from "@/components/ExpenseCard";
 import MonthCard from "@/components/MonthCard";
 import { expenses } from "@/data/expenses";
 import { Expense } from "@/types";
 import { useState } from "react";
 import { ScrollView, StyleSheet } from "react-native";
+
 
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July",
   "August", "September", "October", "November", "December"];
@@ -27,6 +29,12 @@ export default function Index() {
     return y === year && m === month + 1;
   });
 
+  const [category, setCategory] = useState<CategoryFilter>("all");
+
+  const visibleExpenses = monthExpenses.filter(
+    (e) => category === "all" || e.category === category,
+  );
+
   function shift(delta: number) {
     const next = month + delta;
     if (next < 0) { setMonth(11); setYear(year - 1); }
@@ -42,7 +50,8 @@ export default function Index() {
         onPrev={() => shift(-1)}
         onNext={() => shift(1)}
       />
-      {monthExpenses.map((expense) => (
+      <CategoryChips selected={category} onSelect={setCategory} />
+      {visibleExpenses.map((expense) => (
         <ExpenseCard key={expense.id} expense={expense} />
       ))}
     </ScrollView>
