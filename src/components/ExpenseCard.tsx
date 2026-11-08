@@ -1,5 +1,6 @@
 import type { Expense } from "@/types";
 import { Image } from "expo-image";
+import { router } from "expo-router";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
 type ExpenseCardProps = {
@@ -9,7 +10,7 @@ type ExpenseCardProps = {
 export default function ExpenseCard({ expense }: ExpenseCardProps) {
   return (
     <Pressable
-      onPress={() => console.log("Open", expense.id)}
+      onPress={() => router.push({ pathname: "/expense/[id]", params: { id: expense.id } })}
       style={({ pressed }) => [styles.card, pressed && styles.pressed]}
     >
       <Image
