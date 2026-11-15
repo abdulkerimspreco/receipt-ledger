@@ -10,7 +10,9 @@ type ExpenseCardProps = {
 export default function ExpenseCard({ expense }: ExpenseCardProps) {
   return (
     <Pressable
-      onPress={() => router.push({ pathname: "/expense/[id]", params: { id: expense.id } })}
+      onPress={() =>
+        router.push({ pathname: "/expense/[id]", params: { id: expense.id } })
+      }
       style={({ pressed }) => [styles.card, pressed && styles.pressed]}
     >
       <Image
