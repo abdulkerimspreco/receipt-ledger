@@ -6,9 +6,20 @@ import { Expense } from "@/types";
 import { useState } from "react";
 import { ScrollView, StyleSheet } from "react-native";
 
-
-const MONTHS = ["January", "February", "March", "April", "May", "June", "July",
-  "August", "September", "October", "November", "December"];
+const MONTHS = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 
 export const ExpensesList = () => {
   return (
@@ -37,9 +48,13 @@ export default function Index() {
 
   function shift(delta: number) {
     const next = month + delta;
-    if (next < 0) { setMonth(11); setYear(year - 1); }
-    else if (next > 11) { setMonth(0); setYear(year + 1); }
-    else setMonth(next);
+    if (next < 0) {
+      setMonth(11);
+      setYear(year - 1);
+    } else if (next > 11) {
+      setMonth(0);
+      setYear(year + 1);
+    } else setMonth(next);
   }
 
   return (
