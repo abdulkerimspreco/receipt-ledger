@@ -15,7 +15,8 @@ Rules for this repository. They apply to every change, whether written by hand o
 - Commit after every course lab task (the course counts commit history toward the grade).
 - Merge with **Rebase and merge** so the per-task commits stay on `main` and history stays linear. Do not squash.
 - Delete the branch after merging.
-- PR description has three parts: **What** changed, **Why**, **How to test** (exact steps and the result that confirms it works).
+- PR description is **one sentence** saying what the change does and why. For any UI change, add **screenshots** (light and dark mode, plus a wide window if the layout changes). Test steps live in the commit or the conversation, not in the PR text.
+- PR descriptions contain only our own words: no "Generated with Claude" or other tool-attribution lines.
 - Push at least once a week; Week 7 and onwards follow the course schedule in the README.
 
 ## Definition of done (before opening a PR)
@@ -25,6 +26,7 @@ Rules for this repository. They apply to every change, whether written by hand o
 - [ ] The change was tested by hand, with the steps written in the PR.
 - [ ] No leftover `console.log`, test flags (such as `fail: true`), temporary data or commented-out code.
 - [ ] README feature checklist updated if a feature changed state.
+- [ ] The PR has a one-sentence description, and screenshots if the UI changed.
 - [ ] For UI changes: checked in light mode, dark mode, largest text size, a narrow (about 360 px) and a wide (over 900 px) window, and that the last list item clears the system bar.
 
 ## Project structure
