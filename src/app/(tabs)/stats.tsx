@@ -1,9 +1,12 @@
+import { useTheme } from "@/hooks/use-theme";
 import { StyleSheet, Text, View } from "react-native";
 
 export default function Stats() {
+  const theme = useTheme();
+
   return (
     <View style={styles.center}>
-      <Text>Stats coming soon</Text>
+      <Text style={{ color: theme.text }}>Stats coming soon</Text>
     </View>
   );
 }
