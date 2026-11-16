@@ -2,7 +2,6 @@ import CategoryChips, { type CategoryFilter } from "@/components/CategoryChips";
 import ExpenseCard from "@/components/ExpenseCard";
 import MonthCard from "@/components/MonthCard";
 import { expenses } from "@/data/expenses";
-import { Expense } from "@/types";
 import { useState } from "react";
 import { ScrollView, StyleSheet } from "react-native";
 
@@ -20,16 +19,6 @@ const MONTHS = [
   "November",
   "December",
 ];
-
-export const ExpensesList = () => {
-  return (
-    <>
-      {expenses.map((expense: Expense) => (
-        <ExpenseCard key={expense.id} expense={expense} />
-      ))}
-    </>
-  );
-};
 
 export default function Index() {
   const [year, setYear] = useState(() => new Date().getFullYear());
@@ -75,5 +64,4 @@ export default function Index() {
 
 const styles = StyleSheet.create({
   content: { padding: 16, gap: 12 },
-  count: { fontSize: 14, color: "#55627A" },
 });

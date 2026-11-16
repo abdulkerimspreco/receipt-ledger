@@ -18,10 +18,11 @@ The project uses Expo SDK 57. Expo Go on an iPhone only supports the newest SDK,
 - [x] Expense details component
 - [x] Summary header with count and total
 - [x] Expense details screen
-- [ ] Tabs: Expenses, Stats, Settings
+- [x] Tab navigation: Expenses, Stats, Settings
+- [x] Filter by category and month
+- [ ] Stats and Settings screen content
 - [ ] Add and edit expenses with validation
 - [ ] Delete expenses
-- [ ] Filter by category and month
 - [ ] Shared state and saving data on the device
 - [ ] Camera and photo library for receipts
 - [ ] Sign up and log in, with each user's own data (Supabase)
