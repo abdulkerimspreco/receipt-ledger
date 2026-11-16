@@ -1,6 +1,6 @@
-import type { Expense } from "@/types.ts";
+import type { Expense } from "@/types";
 
-export const expenses: Array<Expense> = [
+export const expenses: Expense[] = [
   {
     id: "12345",
     merchant: "Aria Mall",
