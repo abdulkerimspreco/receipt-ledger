@@ -5,7 +5,7 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 
 interface MonthCardProps {
   monthLabel: string;
-  expenses: Array<Expense>;
+  expenses: Expense[];
   onPrev: () => void;
   onNext: () => void;
 }

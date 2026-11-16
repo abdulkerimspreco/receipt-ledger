@@ -4,7 +4,7 @@ import { Pressable, ScrollView, StyleSheet, Text } from "react-native";
 
 export type CategoryFilter = Category | "all";
 
-const CHIPS: Array<{ value: CategoryFilter; label: string }> = [
+const CHIPS: { value: CategoryFilter; label: string }[] = [
   { value: "all", label: "All" },
   { value: "food", label: "Food" },
   { value: "transport", label: "Transport" },
