@@ -1,11 +1,13 @@
 import ExpenseDetails from "@/components/ExpenseDetails";
 import { expenses } from "@/data/expenses";
+import { useTheme } from "@/hooks/use-theme";
 import { Expense } from "@/types";
 import { Stack, useLocalSearchParams } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 
 export default function ExpenseDetailsScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
+  const theme = useTheme();
   const expense = expenses.find(
     (expenseItem: Expense) => expenseItem.id === id,
   );
@@ -13,7 +15,7 @@ export default function ExpenseDetailsScreen() {
   if (!expense) {
     return (
       <View style={styles.center}>
-        <Text>Expense not found!</Text>
+        <Text style={{ color: theme.text }}>Expense not found!</Text>
       </View>
     );
   }
