@@ -1,4 +1,5 @@
-import { colors } from "@/theme";
+import { FontSize, Radius, Spacing } from "@/constants/theme";
+import { useTheme } from "@/hooks/use-theme";
 import type { Category } from "@/types";
 import { Pressable, ScrollView, StyleSheet, Text } from "react-native";
 
@@ -13,13 +14,16 @@ const CHIPS: { value: CategoryFilter; label: string }[] = [
   { value: "other", label: "Other" },
 ];
 
-interface CategoryChipsProps {
+type CategoryChipsProps = {
   selected: CategoryFilter;
   onSelect: (value: CategoryFilter) => void;
-}
+};
 
-export default function CategoryChips(props: CategoryChipsProps) {
-  const { selected, onSelect } = props;
+export default function CategoryChips({
+  selected,
+  onSelect,
+}: CategoryChipsProps) {
+  const theme = useTheme();
 
   return (
     <ScrollView
@@ -34,9 +38,23 @@ export default function CategoryChips(props: CategoryChipsProps) {
           <Pressable
             key={chip.value}
             onPress={() => onSelect(chip.value)}
-            style={[styles.chip, active && styles.chipActive]}
+            accessibilityRole="button"
+            accessibilityState={{ selected: active }}
+            hitSlop={{ top: Spacing.sm, bottom: Spacing.sm }}
+            style={[
+              styles.chip,
+              {
+                backgroundColor: active ? theme.primary : theme.card,
+                borderColor: active ? theme.primary : theme.border,
+              },
+            ]}
           >
-            <Text style={[styles.label, active && styles.labelActive]}>
+            <Text
+              style={[
+                styles.label,
+                { color: active ? theme.onPrimary : theme.text },
+              ]}
+            >
               {chip.label}
             </Text>
           </Pressable>
@@ -48,16 +66,12 @@ export default function CategoryChips(props: CategoryChipsProps) {
 
 const styles = StyleSheet.create({
   scroll: { flexGrow: 0 },
-  row: { gap: 8 },
+  row: { gap: Spacing.sm },
   chip: {
-    paddingHorizontal: 14,
-    paddingVertical: 8,
-    borderRadius: 999,
-    backgroundColor: colors.white,
+    paddingHorizontal: Spacing.md,
+    paddingVertical: Spacing.sm,
+    borderRadius: Radius.pill,
     borderWidth: 1,
-    borderColor: colors.border,
   },
-  chipActive: { backgroundColor: colors.ink, borderColor: colors.ink },
-  label: { fontSize: 13, fontWeight: "600", color: colors.ink },
-  labelActive: { color: colors.white },
+  label: { fontSize: FontSize.small, fontWeight: "600" },
 });
